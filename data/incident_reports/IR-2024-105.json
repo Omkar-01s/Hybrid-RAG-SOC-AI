@@ -1,0 +1,13 @@
+{
+  "incident_id": "IR-2024-105",
+  "type": "Phishing",
+  "detected_on": "2024-12-18T10:42:00Z",
+  "summary": "A user received a fake email resembling internal payroll. Credentials were harvested.",
+  "actions_taken": [
+    "Password reset initiated",
+    "Mail filters updated",
+    "Security awareness session conducted"
+  ],
+  "severity": "Medium",
+  "compliance": ["ISO27001", "NIST CSF"]
+}

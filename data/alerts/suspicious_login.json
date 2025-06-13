@@ -1,0 +1,10 @@
+{
+  "alert_id": "A-1001",
+  "timestamp": "2025-06-10T09:20:00Z",
+  "source": "SIEM",
+  "description": "Multiple failed logins followed by a successful login from an unusual IP address.",
+  "user": "jdoe",
+  "location": "India",
+  "severity": "Medium",
+  "tags": ["Brute Force", "Login Anomaly"]
+}

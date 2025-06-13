@@ -1,0 +1,12 @@
+[
+  {
+    "alert_id": "A-1001",
+    "type": "Login Anomaly",
+    "description": "Multiple failed logins from foreign IP."
+  },
+  {
+    "alert_id": "A-1002",
+    "type": "Lateral Movement",
+    "description": "PowerShell movement across systems."
+  }
+]
