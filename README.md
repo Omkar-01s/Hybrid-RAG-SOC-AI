@@ -11,7 +11,13 @@
 
 ## 📌 Overview
 
-**Security Playbook Generator** is an AI-powered assistant for Security Operations Center (SOC) teams. It processes alert data, retrieves relevant documentation using **Hybrid RAG**, and generates detailed incident playbooks using **LLaMA 3 via Hugging Face**.
+**Modern SOC (Security Operations Center) teams face a growing number of alerts, fragmented documentation, and pressure to respond quickly and accurately. This project is a Generative + Agentic AI solution that:
+
+🔹 Reads a security alert
+🔹 Retrieves related policies, playbooks, and past incidents using Hybrid RAG (BM25 + Embeddings + LLM reranking)
+🔹 Generates a step-by-step Markdown playbook
+🔹 Decides escalation level (Escalate / Handle Locally / Log Only)
+🔹 Produces downloadable PDF reports using Streamlit interface**.
 
 ---
 
