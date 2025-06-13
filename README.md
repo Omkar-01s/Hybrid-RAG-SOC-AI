@@ -31,7 +31,7 @@ soc-playbook-generator/
 - ├── app/ # Streamlit UI
 - ├── data/ # Playbooks, policies, alerts, reports
 - ├── logs/ # Alert logs & schema
-- ├── rag/ # Sparse, dense, hybrid retrievers
+- ├── rag/ # hybrid retrievers
 - ├── agents/ # Escalation agent & report writer
 - ├── llm/ # Prompt templates & LLM logic
 - ├── output/ # Generated reports
