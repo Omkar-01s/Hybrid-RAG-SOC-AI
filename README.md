@@ -1,5 +1,5 @@
 # 🛡️ Security Playbook Generator for SOC Teams  
-> 🚨 Hybrid RAG + Agentic AI | Real-time Playbook Generation
+> 🚨 Hybrid RAG + Agentic AI | Real-time Alert-to-Report System
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
@@ -11,42 +11,44 @@
 
 ## 📌 Overview
 
-**Modern SOC (Security Operations Center) teams face a growing number of alerts, fragmented documentation, and pressure to respond quickly and accurately. This project is a Generative + Agentic AI solution that:**
+**Security Playbook Generator** is an intelligent SOC assistant that transforms alerts into detailed, actionable playbooks using Generative and Agentic AI. It enhances analyst efficiency and improves decision-making with:
 
-#### 🔹 **Reads a security alert**
-#### 🔹 **Retrieves related policies, playbooks, and past incidents using Hybrid RAG (BM25 + Embeddings + LLM reranking)**
-#### 🔹 **Generates a step-by-step Markdown playbook**
-#### 🔹 **Decides escalation level (Escalate / Handle Locally / Log Only)**
-#### 🔹 **Produces downloadable PDF reports using Streamlit interface.**
+- 🧠 **Hybrid Retrieval:** Find related policies, incidents & playbooks via BM25 + Embeddings + LLM Re-ranking
+- 🦙 **LLM Playbook Generator:** Uses LLaMA 3 (via Hugging Face) to generate markdown playbooks
+- 🧭 **Agentic Escalation:** Determines if an alert should escalate or be handled locally
+- 📥 **PDF Report Generation:** One-click downloadable reports
+- 🎛️ **Modern Dashboard:** View, filter, and analyze reports in a production-ready Streamlit interface
 
 ---
 
 ## 🧠 Key Features
 
-- 🔍 **Hybrid Retrieval:** Combines BM25 + Dense Embeddings + LLM re-ranking
-- 🦙 **LLM-Powered Playbooks:** Uses LLaMA 3 (Hugging Face API) to generate response plans
-- 🧠 **Agentic Reasoning:** Decides whether to escalate or log locally
-- 📝 **Report Generation:** Generates Markdown and PDF reports
-- 🎛️ **Streamlit UI:** Intuitive frontend for uploading and managing alerts
+| Feature                      | Description |
+|-----------------------------|-------------|
+| 🔍 **Hybrid RAG**           | Combines BM25, Dense Embeddings, and LLM Re-ranking |
+| 🤖 **Agent Decision Maker** | Determines escalation level (Escalate / Handle Locally / Log Only) |
+| 📝 **LLM Markdown Playbooks** | Step-by-step mitigation plans using LLaMA 3 |
+| 📄 **PDF + Markdown Reports** | Clean, consistent report output |
+| 📊 **Interactive Dashboard** | KPI cards, preview, filtering, downloads |
+| 🗂️ **Auto Report Indexing** | Auto-scans `output/generated_reports/` for updates |
 
 ---
 
-## 📂 Project Structure
+## 🗂️ Project Structure
 
-soc-playbook-generator/
-#### ├── app/ # Streamlit UI
-#### ├── data/ # Playbooks, policies, alerts, reports
-#### ├── logs/ # Alert logs & schema
-#### ├── rag/ # hybrid retrievers
-#### ├── agents/ # Escalation agent & report writer
-#### ├── llm/ # Prompt templates & LLM logic
-#### ├── output/ # Generated reports
-#### ├── main.py # Core orchestrator
-#### ├── requirements.txt # Dependencies
-#### ├── Dockerfile # Optional Docker setup
-#### └── .env # Hugging Face token
-
-
+#### soc-playbook-generator/
+#### ├── app/ # Streamlit UI & dashboards
+#### ├── core/ # Main orchestrators
+#### ├── data/ # Playbooks, policies, alerts, incident reports
+#### ├── rag/ # Hybrid Retriever (BM25 + Embeddings + Reranker)
+#### ├── agents/ # Escalation logic & report writer
+#### ├── llm/ # LLM integration and prompt chains
+#### ├── output/generated_reports/ # Markdown / PDF reports
+#### ├── logs/ # Alert logs, schema tracking
+#### ├── main.py # Main script to trigger chain end-to-end
+#### ├── requirements.txt # Python dependencies
+#### ├── .env # Hugging Face API token (env vars)
+#### └── README.md
 
 ---
 
@@ -64,10 +66,11 @@ soc-playbook-generator/
 
 ## 🚀 How to Run
 
-### 1️⃣ Clone the Repo
+### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/soc-playbook-generator.git
+git clone https://github.com/Omkar-01s/Hybrid-RAG-SOC-AI.git
 cd soc-playbook-generator
+
 ```
 
 ### 2️⃣ Setup Environment
@@ -85,8 +88,37 @@ You can get your token from: https://huggingface.co/settings/tokens
 
 4️⃣ Run with Streamlit
 ```bash
-streamlit run app/ui.py
+streamlit run app/dashboard.py
 ```
+
+### 🎛️ SOC Dashboard Features
+#### The Streamlit-based dashboard provides:
+
+#### ✅ Real-time Filtering: by Alert Type, Escalation Level, and Date Range
+
+#### ✅ KPI Cards: Total Reports, Unique Alerts, Last Report Timestamp
+
+#### ✅ Previews & Full Content: Scroll through reports, toggle details
+
+#### ✅ Download Button: PDF or Markdown versions
+
+#### ✅ Expander UI: Neatly toggles full content without clutter
+
+### 📈 Sample Workflow
+#### 1.Drop an alert file in data/alerts/
+
+#### 2.Run main.py to generate a report:
+```bash
+python main.py --alert data/alerts/suspicious_login.json
+```
+#### 3.Open Streamlit dashboard to:
+
+- Filter alerts (by severity/type/date)
+
+- Read preview or full report
+
+- Download the final PDF
+
 ## 🧠 Sample Use Case
 - Upload suspicious_login.json from data/alerts/
 
