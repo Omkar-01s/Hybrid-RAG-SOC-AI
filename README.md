@@ -82,10 +82,34 @@ You can get your token from: https://huggingface.co/settings/tokens
 streamlit run app/ui.py
 ```
 ## 🧠 Sample Use Case
-- 1.Upload suspicious_login.json from data/alerts/
+- Upload suspicious_login.json from data/alerts/
 
-- 2.System fetches past playbooks & policies using hybrid RAG
+- System fetches past playbooks & policies using hybrid RAG
 
-- 3.LLM generates a Markdown playbook + escalation decision
+- LLM generates a Markdown playbook + escalation decision
 
-- 4.Generates downloadable PDF report inside /output/
+- Generates downloadable PDF report inside /output/
+
+
+
+## 👨‍🏫 Inspired by Industry Use-Cases
+- This system mimics how real SOCs work with:
+
+- Centralized threat intelligence
+
+- Policy mapping to ISO/NIST
+
+- Analyst-assisted auto-escalation
+
+## 🧠 Future Enhancements
+- VectorDB backend for document retrieval (Qdrant/Weaviate)
+
+- Streaming LLM output (LangChain Agents + Callbacks)
+
+- Role-based access for security teams
+
+## 📬 Connect With Me
+# Developer: Omkar Shetgaonkar
+# 📧 omkar@example.com
+# 🔗 LinkedIn
+
