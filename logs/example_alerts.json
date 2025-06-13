@@ -1,12 +1,16 @@
 [
   {
-    "alert_id": "A-1001",
-    "type": "Login Anomaly",
-    "description": "Multiple failed logins from foreign IP."
+    "id": "ALRT-001",
+    "description": "Multiple failed login attempts from foreign IP.",
+    "source": "SIEM",
+    "severity": "High",
+    "Date": "2024-06-10T10:45:00Z"
   },
   {
-    "alert_id": "A-1002",
-    "type": "Lateral Movement",
-    "description": "PowerShell movement across systems."
+    "id": "ALRT-002",
+    "description": "Unusual lateral movement detected between internal hosts.",
+    "source": "EDR",
+    "severity": "Medium",
+    "Date": "2024-06-11T02:30:00Z"
   }
 ]
