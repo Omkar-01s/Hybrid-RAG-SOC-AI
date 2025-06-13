@@ -110,6 +110,6 @@ streamlit run app/ui.py
 
 ## 📬 Connect With Me
 - Developer: Omkar Shetgaonkar
-- 📧 omkar@example.com
-- 🔗 LinkedIn
+- 📧 shetgaonkaromkar@gmail.com
+- 🔗 linkedin.com/in/omkar-shetgaonkar
 
