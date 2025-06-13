@@ -12,13 +12,12 @@ report_dir = Path("output/generated_reports")
 report_files = list(report_dir.glob("*"))
 
 if not report_files:
-    st.warning("No reports found in output/generated_reports.")
+    st.warning("⚠️ No reports found in output/generated_reports.")
     st.stop()
 
-# ✅ Step 2: Scan and extract summary from reports
+# ✅ Step 2: Read and extract report metadata
 records = []
 for file in report_files:
-    ext = file.suffix
     try:
         with open(file, "r", encoding="utf-8", errors="ignore") as f:
             content = f.read()
@@ -34,14 +33,13 @@ for file in report_files:
     if "Escalation Level:" in content:
         escalation = content.split("Escalation Level:")[1].split("\n")[0].strip()
 
-    # ✅ Try to extract a date from the filename, fallback to file modified time
+    # ✅ Try extracting date from filename
     try:
-        # Example filename: 2025-06-11_alert123.md
-        possible_date = file.stem.split("_")[0]
-        timestamp = datetime.strptime(possible_date, "%Y-%m-%d")
+        name_parts = file.stem.split("_")
+        date_candidate = name_parts[0]
+        timestamp = datetime.strptime(date_candidate, "%Y-%m-%d")
     except Exception:
-        # Fallback: use file's last modified time
-        timestamp = datetime.fromtimestamp(os.path.getmtime(file))
+        timestamp = datetime.fromtimestamp(file.stat().st_mtime)  # fallback
 
     records.append({
         "Filename": file.name,
@@ -52,25 +50,25 @@ for file in report_files:
         "Preview": content[:500]
     })
 
+# ✅ Step 3: Convert to DataFrame
 df = pd.DataFrame(records)
-df["Date"] = pd.to_datetime(df["Date"], errors='coerce')
 
-# ✅ Step 3: Sidebar filters
+# ✅ Step 4: Sidebar filter
 with st.sidebar:
     st.header("🔍 Filter Reports")
-    alert_types = df["Type"].unique().tolist()
+    alert_types = df["Type"].dropna().unique().tolist()
     selected_types = st.multiselect("Alert Type", alert_types, default=alert_types)
 
-    esc_levels = df["Escalation"].unique().tolist()
+    esc_levels = df["Escalation"].dropna().unique().tolist()
     selected_esc = st.multiselect("Escalation Level", esc_levels, default=esc_levels)
 
     df_filtered = df[df["Type"].isin(selected_types) & df["Escalation"].isin(selected_esc)]
 
-# ✅ Step 4: Display filtered table
+# ✅ Step 5: Show filtered results
 st.markdown(f"### 🧾 Found {len(df_filtered)} Reports")
 st.dataframe(df_filtered[["Filename", "Type", "Escalation", "Date"]].sort_values("Date", ascending=False))
 
-# ✅ Step 5: Select report to preview and download
+# ✅ Step 6: Select and preview
 selected_report = st.selectbox("📂 View Report", df_filtered["Filename"].tolist())
 
 if selected_report:
