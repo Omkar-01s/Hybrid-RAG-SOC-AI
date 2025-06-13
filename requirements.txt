@@ -4,13 +4,14 @@ langchain-core
 huggingface_hub
 sentence-transformers
 faiss-cpu
+markdown2
 
 # PDF & Markdown handling
 PyMuPDF           # To read PDFs
 python-docx       # To parse .docx policy files
 markdown          # For Markdown conversion
 weasyprint        # To generate PDFs from Markdown
-
+fpdf
 # Streamlit frontend
 streamlit
 

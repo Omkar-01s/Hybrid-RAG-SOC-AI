@@ -1,5 +1,3 @@
-# llm/response_engine.py
-
 import os
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
@@ -79,3 +77,8 @@ def reason_through_action(alert_text, summary_text):
     chain = LLMChain(llm=llm, prompt=reasoning_prompt)
     result = chain.run(alert=alert_text, summary=summary_text)
     return result.strip()
+
+# ✅ Dummy reranker (just returns documents unchanged)
+def rerank_documents(query, documents):
+    # TODO: Replace with cross-encoder reranker later
+    return documents

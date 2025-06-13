@@ -1,4 +1,3 @@
-# rag/
 import os
 import pickle
 from langchain.embeddings import HuggingFaceEmbeddings
