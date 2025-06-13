@@ -39,3 +39,27 @@ soc-playbook-generator/
 ├── requirements.txt # Dependencies
 ├── Dockerfile # Optional Docker setup
 └── .env # Hugging Face token
+
+
+
+---
+
+## ⚙️ Features
+
+| Module | Capability |
+|--------|------------|
+| **Hybrid Retriever** | Combines BM25 + Dense Embeddings + LLM re-ranking |
+| **LLM Chain**        | Uses LLaMA 3 (Hugging Face) for generating summaries |
+| **Agentic Escalation** | Uses reasoning prompt to decide if alert should escalate |
+| **PDF Report Generator** | Creates clean markdown + downloadable PDF |
+| **Streamlit UI**     | Simple interactive UI to upload or view alerts |
+
+---
+
+## 🚀 How to Run
+
+### 1️⃣ Clone the Repo
+```bash
+git clone https://github.com/your-username/soc-playbook-generator.git
+cd soc-playbook-generator
+
