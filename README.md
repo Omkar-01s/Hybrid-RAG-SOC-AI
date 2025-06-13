@@ -14,10 +14,10 @@
 **Modern SOC (Security Operations Center) teams face a growing number of alerts, fragmented documentation, and pressure to respond quickly and accurately. This project is a Generative + Agentic AI solution that:**
 
 #### 🔹 **Reads a security alert**
-- 🔹 **Retrieves related policies, playbooks, and past incidents using Hybrid RAG (BM25 + Embeddings + LLM reranking)**
-- 🔹 **Generates a step-by-step Markdown playbook**
-- 🔹 **Decides escalation level (Escalate / Handle Locally / Log Only)**
-- 🔹 **Produces downloadable PDF reports using Streamlit interface.**
+#### 🔹 **Retrieves related policies, playbooks, and past incidents using Hybrid RAG (BM25 + Embeddings + LLM reranking)**
+#### 🔹 **Generates a step-by-step Markdown playbook**
+#### 🔹 **Decides escalation level (Escalate / Handle Locally / Log Only)**
+#### 🔹 **Produces downloadable PDF reports using Streamlit interface.**
 
 ---
 
@@ -34,17 +34,17 @@
 ## 📂 Project Structure
 
 soc-playbook-generator/
-- ├── app/ # Streamlit UI
-- ├── data/ # Playbooks, policies, alerts, reports
-- ├── logs/ # Alert logs & schema
-- ├── rag/ # hybrid retrievers
-- ├── agents/ # Escalation agent & report writer
-- ├── llm/ # Prompt templates & LLM logic
-- ├── output/ # Generated reports
-- ├── main.py # Core orchestrator
-- ├── requirements.txt # Dependencies
-- ├── Dockerfile # Optional Docker setup
-- └── .env # Hugging Face token
+#### ├── app/ # Streamlit UI
+#### ├── data/ # Playbooks, policies, alerts, reports
+#### ├── logs/ # Alert logs & schema
+#### ├── rag/ # hybrid retrievers
+#### ├── agents/ # Escalation agent & report writer
+#### ├── llm/ # Prompt templates & LLM logic
+#### ├── output/ # Generated reports
+#### ├── main.py # Core orchestrator
+#### ├── requirements.txt # Dependencies
+#### ├── Dockerfile # Optional Docker setup
+#### └── .env # Hugging Face token
 
 
 
@@ -108,14 +108,14 @@ streamlit run app/ui.py
 - Analyst-assisted auto-escalation
 
 ## 🧠 Future Enhancements
-- VectorDB backend for document retrieval (Qdrant/Weaviate)
+#### VectorDB backend for document retrieval (Qdrant/Weaviate)
 
-- Streaming LLM output (LangChain Agents + Callbacks)
+#### Streaming LLM output (LangChain Agents + Callbacks)
 
-- Role-based access for security teams
+#### Role-based access for security teams
 
 ## 📬 Connect With Me
-- Developer: Omkar Shetgaonkar
-- 📧 shetgaonkaromkar@gmail.com
-- 🔗 linkedin.com/in/omkar-shetgaonkar
+#### Developer: Omkar Shetgaonkar
+#### 📧 shetgaonkaromkar@gmail.com
+#### 🔗 linkedin.com/in/omkar-shetgaonkar
 
