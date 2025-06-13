@@ -62,4 +62,30 @@ soc-playbook-generator/
 ```bash
 git clone https://github.com/your-username/soc-playbook-generator.git
 cd soc-playbook-generator
+```
 
+### 2️⃣ Setup Environment
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+3️⃣ Create .env file
+```bash
+HUGGINGFACEHUB_API_TOKEN=your_hugging_face_token
+```
+You can get your token from: https://huggingface.co/settings/tokens
+
+4️⃣ Run with Streamlit
+```bash
+streamlit run app/ui.py
+```
+## 🧠 Sample Use Case
+- 1.Upload suspicious_login.json from data/alerts/
+
+- 2.System fetches past playbooks & policies using hybrid RAG
+
+- 3.LLM generates a Markdown playbook + escalation decision
+
+- 4.Generates downloadable PDF report inside /output/
