@@ -1,10 +1,12 @@
 langchain
 langchain-community
 langchain-core
+langchain_huggingface
 huggingface_hub
 sentence-transformers
 faiss-cpu
 markdown2
+rank_bm25
 
 # PDF & Markdown handling
 PyMuPDF           # To read PDFs
