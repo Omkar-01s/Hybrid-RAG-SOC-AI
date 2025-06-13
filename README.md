@@ -28,17 +28,17 @@
 ## 📂 Project Structure
 
 soc-playbook-generator/
-├── app/ # Streamlit UI
-├── data/ # Playbooks, policies, alerts, reports
-├── logs/ # Alert logs & schema
-├── rag/ # Sparse, dense, hybrid retrievers
-├── agents/ # Escalation agent & report writer
-├── llm/ # Prompt templates & LLM logic
-├── output/ # Generated reports
-├── main.py # Core orchestrator
-├── requirements.txt # Dependencies
-├── Dockerfile # Optional Docker setup
-└── .env # Hugging Face token
+- ├── app/ # Streamlit UI
+- ├── data/ # Playbooks, policies, alerts, reports
+- ├── logs/ # Alert logs & schema
+- ├── rag/ # Sparse, dense, hybrid retrievers
+- ├── agents/ # Escalation agent & report writer
+- ├── llm/ # Prompt templates & LLM logic
+- ├── output/ # Generated reports
+- ├── main.py # Core orchestrator
+- ├── requirements.txt # Dependencies
+- ├── Dockerfile # Optional Docker setup
+- └── .env # Hugging Face token
 
 
 
@@ -109,7 +109,7 @@ streamlit run app/ui.py
 - Role-based access for security teams
 
 ## 📬 Connect With Me
-# Developer: Omkar Shetgaonkar
-# 📧 omkar@example.com
-# 🔗 LinkedIn
+- Developer: Omkar Shetgaonkar
+- 📧 omkar@example.com
+- 🔗 LinkedIn
 
