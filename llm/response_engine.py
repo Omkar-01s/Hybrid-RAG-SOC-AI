@@ -1,23 +1,20 @@
 import os
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
-from langchain.chains import LLMChain
-from langchain_community.llms import HuggingFaceHub
+from langchain_huggingface import HuggingFaceEndpoint
 
-# Load API key from .env
+
+# ✅ Load environment variables
 load_dotenv()
 hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
-# ✅ Define the Hugging Face LLM (LLaMA 3 8B Instruct)
-llm = HuggingFaceHub(
-    repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
+# ✅ Setup Hugging Face LLM
+llm = HuggingFaceEndpoint(
+    repo_id="mistralai/Mistral-7B-Instruct-v0.1", #can use other model
+    task="text-generation",
     huggingfacehub_api_token=hf_token,
-    model_kwargs={
-        "temperature": 0.3,
-        "max_new_tokens": 800,
-        "top_p": 0.95,
-        "repetition_penalty": 1.2
-    }
+    temperature=0.3,
+    max_new_tokens=512,
 )
 
 # ✅ Prompt Template for Playbook Generation
@@ -68,17 +65,17 @@ Respond with only one of: Escalate, Handle_Locally, Log_Only.
 # ✅ Chain to generate LLM-based playbook
 def generate_summary(alert_text, retrieved_docs):
     doc_texts = "\n".join([doc.page_content for doc in retrieved_docs])
-    chain = LLMChain(llm=llm, prompt=summary_prompt)
-    result = chain.run(alert=alert_text, documents=doc_texts)
+    chain = summary_prompt | llm
+    result = chain.invoke({"alert": alert_text, "documents": doc_texts})
     return result
 
 # ✅ Chain to reason through escalation
 def reason_through_action(alert_text, summary_text):
-    chain = LLMChain(llm=llm, prompt=reasoning_prompt)
-    result = chain.run(alert=alert_text, summary=summary_text)
+    chain = reasoning_prompt | llm
+    result = chain.invoke({"alert": alert_text, "summary": summary_text})
     return result.strip()
 
-# ✅ Dummy reranker (just returns documents unchanged)
+# ✅ Dummy reranker (to be replaced later)
 def rerank_documents(query, documents):
     # TODO: Replace with cross-encoder reranker later
     return documents
