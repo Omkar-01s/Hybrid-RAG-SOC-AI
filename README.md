@@ -11,13 +11,13 @@
 
 ## 📌 Overview
 
-**Modern SOC (Security Operations Center) teams face a growing number of alerts, fragmented documentation, and pressure to respond quickly and accurately. This project is a Generative + Agentic AI solution that:
+**Modern SOC (Security Operations Center) teams face a growing number of alerts, fragmented documentation, and pressure to respond quickly and accurately. This project is a Generative + Agentic AI solution that:**
 
-🔹 Reads a security alert
-🔹 Retrieves related policies, playbooks, and past incidents using Hybrid RAG (BM25 + Embeddings + LLM reranking)
-🔹 Generates a step-by-step Markdown playbook
-🔹 Decides escalation level (Escalate / Handle Locally / Log Only)
-🔹 Produces downloadable PDF reports using Streamlit interface**.
+-🔹 Reads a security alert
+-🔹 Retrieves related policies, playbooks, and past incidents using Hybrid RAG (BM25 + Embeddings + LLM reranking)
+-🔹 Generates a step-by-step Markdown playbook
+-🔹 Decides escalation level (Escalate / Handle Locally / Log Only)
+-🔹 Produces downloadable PDF reports using Streamlit interface.
 
 ---
 
