@@ -13,11 +13,11 @@
 
 **Security Playbook Generator** is an intelligent SOC assistant that transforms alerts into detailed, actionable playbooks using Generative and Agentic AI. It enhances analyst efficiency and improves decision-making with:
 
-- 🧠 **Hybrid Retrieval:** Find related policies, incidents & playbooks via BM25 + Embeddings + LLM Re-ranking
-- 🦙 **LLM Playbook Generator:** Uses LLaMA 3 (via Hugging Face) to generate markdown playbooks
-- 🧭 **Agentic Escalation:** Determines if an alert should escalate or be handled locally
-- 📥 **PDF Report Generation:** One-click downloadable reports
-- 🎛️ **Modern Dashboard:** View, filter, and analyze reports in a production-ready Streamlit interface
+- **Hybrid Retrieval:** Find related policies, incidents & playbooks via BM25 + Embeddings + LLM Re-ranking
+- **LLM Playbook Generator:** Uses LLaMA 3 (via Hugging Face) to generate markdown playbooks
+- **Agentic Escalation:** Determines if an alert should escalate or be handled locally
+- **PDF Report Generation:** One-click downloadable reports
+- 🎛**Modern Dashboard:** View, filter, and analyze reports in a production-ready Streamlit interface
 
 ---
 
@@ -52,7 +52,7 @@
 
 ---
 
-## ⚙️ Features
+## Features
 
 | Module | Capability |
 |--------|------------|
