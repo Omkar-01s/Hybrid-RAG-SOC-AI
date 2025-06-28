@@ -37,17 +37,17 @@
 ## 🗂️ Project Structure
 
 #### soc-playbook-generator/
-#### ├── app/ # Streamlit UI & dashboards
-#### ├── core/ # Main orchestrators
-#### ├── data/ # Playbooks, policies, alerts, incident reports
-#### ├── rag/ # Hybrid Retriever (BM25 + Embeddings + Reranker)
-#### ├── agents/ # Escalation logic & report writer
-#### ├── llm/ # LLM integration and prompt chains
-#### ├── output/generated_reports/ # Markdown / PDF reports
-#### ├── logs/ # Alert logs, schema tracking
-#### ├── main.py # Main script to trigger chain end-to-end
-#### ├── requirements.txt # Python dependencies
-#### ├── .env # Hugging Face API token (env vars)
+#### ├── app/                               Streamlit UI & dashboards
+#### ├── core/                              Main orchestrators
+#### ├── data/                              Playbooks, policies, alerts, incident reports
+#### ├── rag/                               Hybrid Retriever (BM25 + Embeddings + Reranker)
+#### ├── agents/                            Escalation logic & report writer
+#### ├── llm/                               LLM integration and prompt chains
+#### ├── output/generated_reports/          Markdown / PDF reports
+#### ├── logs/                              Alert logs, schema tracking
+#### ├── main.py                            Main script to trigger chain end-to-end
+#### ├── requirements.txt                   Python dependencies
+#### ├── .env                               Hugging Face API token (example)
 #### └── README.md
 
 ---
